@@ -1,0 +1,14 @@
+package headfirst.patterns.simuduck;
+
+/**
+ * Desc
+ *
+ * @author Papa Ray
+ * Created on 2018-01-10
+ */
+public class Quack implements QuackBehavior {
+    @Override
+    public void quack() {
+        System.out.println("Quack");
+    }
+}
