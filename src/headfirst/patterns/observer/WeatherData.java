@@ -1,6 +1,6 @@
 package headfirst.patterns.observer;
 
-import java.util.ArrayList;
+import java.util.Observable;
 
 /**
  * Desc
@@ -8,32 +8,15 @@ import java.util.ArrayList;
  * @author Papa Ray
  * Created on 2018-01-10
  */
-public class WeatherData implements Subject {
-    private ArrayList<Observer> observers;
-        private float temperature;
-        private float humidity;
+public class WeatherData extends Observable {
+    private float temperature;
+    private float humidity;
     private float pressure;
 
-    public WeatherData() {
-        observers = new ArrayList<Observer>();
-    }
-
-    @Override
-    public void registerObserver(Observer o) {
-        observers.add(o);
-    }
-
-    @Override
-    public void removeObserver(Observer o) {
-        observers.remove(o);
-    }
-
-    @Override
-    public void notifyObservers() {
-        observers.forEach(observer -> observer.update(temperature, humidity, pressure));
-    }
+    public WeatherData() {}
 
     public void measurementChanged() {
+        setChanged();
         notifyObservers();
     }
 
@@ -42,5 +25,17 @@ public class WeatherData implements Subject {
         this.humidity = humidity;
         this.pressure = pressure;
         measurementChanged();
+    }
+
+    public float getTemperature() {
+        return temperature;
+    }
+
+    public float getHumidity() {
+        return humidity;
+    }
+
+    public float getPressure() {
+        return pressure;
     }
 }
