@@ -1,4 +1,4 @@
-package headfirst.exercise;
+package javase;
 
 public class MathUtil {
     public static long CAL_COUNT = 0;
