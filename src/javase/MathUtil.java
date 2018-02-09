@@ -21,17 +21,27 @@ public class MathUtil {
         return calCombineKandN(k-1, n) + calCombineKandN(k, n);
     }
 
+
+    public static long calPenalty(int base, int times) {
+        if (times == 1) return 0;
+        return (long) Math.pow((double)base, (double)(times - 1)) * 10;
+
+    }
+
     public static void main(String[] args) {
 
-        for (int n = 0; n < 10; n++) {
-            for (int k = 0; k < 10; k++) {
-                if (n - (k - 1) < 0 || n - k < 0 || k - 1 < 0) {
-                    continue;
-                }
-                System.out.print("Cp(" + k + "," + n + ")=" + calCombineKandNplus(k,n) + " ");
-            }
-            System.out.println("\n");
-        }
+//        for (int n = 0; n < 10; n++) {
+//            for (int k = 0; k < 10; k++) {
+//                if (n - (k - 1) < 0 || n - k < 0 || k - 1 < 0) {
+//                    continue;
+//                }
+//                System.out.print("Cp(" + k + "," + n + ")=" + calCombineKandNplus(k,n) + " ");
+//            }
+//            System.out.println("\n");
+//        }
+
+        long penalty = calPenalty(2, 10);
+        System.out.println("Penalty for the 10th time is: " + penalty);
 
     }
 }

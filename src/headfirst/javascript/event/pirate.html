@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>Pirates Booty</title>
+    <style>
+
+    </style>
+</head>
+
+<body>
+    <img id="map" src="map.jpg" alt="A booty map">
+    <p id="coords">Move mouse to find coordinates...</p>
+
+    <script>
+        window.onload = init;
+        function init() {
+            var map = document.getElementById("map");
+            map.onmousemove = showCoords;
+        }
+
+        function showCoords(eventObj) {
+            var massage = document.getElementById("coords");
+            var x = eventObj.clientX;
+            var y = eventObj.clientY;
+            massage.innerHTML = "Map coordinates: " + x + ", " + y;
+        }
+    </script>
+</body>
+
+</html>
