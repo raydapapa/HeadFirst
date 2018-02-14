@@ -5,7 +5,7 @@
     <title>Palindrome</title>
     <script>
         String.prototype.palindrome = function () {
-            const str = this.split("").join("");
+            const str = this.split("").join("");//TODO why?
             const strReversed = this.split("").reverse().join("") ;
             return (str === strReversed);
         }
