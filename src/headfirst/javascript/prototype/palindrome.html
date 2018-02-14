@@ -1,0 +1,29 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>Palindrome</title>
+    <script>
+        String.prototype.palindrome = function () {
+            const str = this.split("").join("");
+            const strReversed = this.split("").reverse().join("") ;
+            return (str === strReversed);
+        }
+
+        let words = ["refer", "christy", "abba", "thanks"];
+
+        words.forEach( function (word) {
+            if (word.palindrome()) {
+                console.log("[" + word + "] is a palindrome.");
+            } else {
+                console.log("[" + word + "] is not a palindrome.");
+            }
+        });
+
+
+
+    </script>
+</head>
+<body>
+</body>
+</html>
