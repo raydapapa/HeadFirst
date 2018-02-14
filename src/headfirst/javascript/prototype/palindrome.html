@@ -5,9 +5,9 @@
     <title>Palindrome</title>
     <script>
         String.prototype.palindrome = function () {
-            const str = this.split("").join("");//TODO why?
+            // const str = this.split("").join("");//this won't work because 'this' is a String object. 'refer' is it's primitive.
             const strReversed = this.split("").reverse().join("") ;
-            return (str === strReversed);
+            return (strReversed === this.valueOf());
         }
 
         let words = ["refer", "christy", "abba", "thanks"];
