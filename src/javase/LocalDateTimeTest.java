@@ -18,7 +18,7 @@ public class LocalDateTimeTest {
 
         LocalDateTime rightNow = LocalDateTime.now();
 
-        DateTimeFormatter dtf = DateTimeFormatter.ofPattern(DATETIME_FORMAT);
+        DateTimeFormatter dtf = DateTimeFormatter.ofPattern("yyyy年MM月dd日 hh:mm a");
 
         System.out.println(now.toString());
         System.out.println("sec = " + sec);
